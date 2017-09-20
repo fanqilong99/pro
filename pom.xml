@@ -12,6 +12,20 @@
 		<module>pro_web1</module>
 		<module>pro_web2</module>
 	</modules>
+	
+	<dependencies>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+	</dependencies>
+	
 	<!-- 可以解决Maven->update project默认jdk的问题 -->
 	<profiles>
 		<profile>
