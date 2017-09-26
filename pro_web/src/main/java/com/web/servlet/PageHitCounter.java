@@ -14,38 +14,34 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/PageHitCounter")
 public class PageHitCounter extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    private int hitCount; 
-    
-    public void init() 
-    { 
-        // ÖØÖÃµã»÷¼ÆÊıÆ÷
-        hitCount = 0;
-    } 
-    
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 private static final long serialVersionUID = 1L;
+	    private int hitCount; 
+	    
+	    public void init() 
+	    { 
+	        // é‡ç½®ç‚¹å‡»è®¡æ•°å™¨
+	        hitCount = 0;
+	    } 
+	    
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("text/html;charset=UTF-8");
-        // Ôö¼Ó hitCount 
-//        hitCount++; 
-        if(request.getSession().isNew()){
-        	hitCount++;
-        }
-        PrintWriter out = response.getWriter();
-        String title = "×Üµã»÷Á¿";
-        String docType = "<!DOCTYPE html> \n";
-        out.println(docType +
-            "<html>\n" +
-            "<head><title>" + title + "</title></head>\n" +
-            "<body bgcolor=\"#f0f0f0\">\n" +
-            "<h1 align=\"center\">" + title + "</h1>\n" +
-            "<h2 align=\"center\">" + hitCount + "</h2>\n" +
-            "</body></html>");
-    }
-    
-    public void destroy() 
-    { 
-        // ÕâÒ»²½ÊÇ¿ÉÑ¡µÄ£¬µ«ÊÇÈç¹ûĞèÒª£¬Äú¿ÉÒÔ°Ñ hitCount µÄÖµĞ´Èëµ½Êı¾İ¿â
-    } 
-
+	        response.setContentType("text/html;charset=UTF-8");
+	        // å¢åŠ  hitCount 
+	        hitCount++; 
+	        PrintWriter out = response.getWriter();
+	        String title = "æ€»ç‚¹å‡»é‡";
+	        String docType = "<!DOCTYPE html> \n";
+	        out.println(docType +
+	            "<html>\n" +
+	            "<head><title>" + title + "</title></head>\n" +
+	            "<body bgcolor=\"#f0f0f0\">\n" +
+	            "<h1 align=\"center\">" + title + "</h1>\n" +
+	            "<h2 align=\"center\">" + hitCount + "</h2>\n" +
+	            "</body></html>");
+	    }
+	    
+	    public void destroy() 
+	    { 
+	        // è¿™ä¸€æ­¥æ˜¯å¯é€‰çš„ï¼Œä½†æ˜¯å¦‚æœéœ€è¦ï¼Œæ‚¨å¯ä»¥æŠŠ hitCount çš„å€¼å†™å…¥åˆ°æ•°æ®åº“
+	    } 
 }

@@ -17,38 +17,38 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/RefreshServlet")
 public class RefreshServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-   
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 private static final long serialVersionUID = 1L;
+	   
+	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // ÉèÖÃË¢ĞÂ×Ô¶¯¼ÓÔØµÄÊÂ¼ş¼ä¸ôÎª 5 Ãë
-        response.setIntHeader("Refresh", 1);
-     
-        // ÉèÖÃÏìÓ¦ÄÚÈİÀàĞÍ
-        response.setContentType("text/html;charset=UTF-8");
-     
-        // »ñÈ¡µ±Ç°µÄÊ±¼ä
-        Calendar calendar = new GregorianCalendar();
-        String am_pm;
-        int hour = calendar.get(Calendar.HOUR);
-        int minute = calendar.get(Calendar.MINUTE);
-        int second = calendar.get(Calendar.SECOND);
-        if(calendar.get(Calendar.AM_PM) == 0)
-            am_pm = "AM";
-        else
-            am_pm = "PM";
-     
-        String CT = hour+":"+ minute +":"+ second +" "+ am_pm;
-        
-        PrintWriter out = response.getWriter();
-        String title = "Ê¹ÓÃ Servlet ×Ô¶¯Ë¢ĞÂÒ³Ãæ";
-        String docType = "<!DOCTYPE html> \n";
-        out.println(docType +
-            "<html>\n" +
-            "<head><title>" + title + "</title></head>\n"+
-            "<body bgcolor=\"#f0f0f0\">\n" +
-            "<h1 align=\"center\">" + title + "</h1>\n" +
-            "<p>µ±Ç°Ê±¼äÊÇ£º" + CT + "</p>\n");
-    }
+	        // è®¾ç½®åˆ·æ–°è‡ªåŠ¨åŠ è½½çš„äº‹ä»¶é—´éš”ä¸º 5 ç§’
+	        response.setIntHeader("Refresh", 5);
+	     
+	        // è®¾ç½®å“åº”å†…å®¹ç±»å‹
+	        response.setContentType("text/html;charset=UTF-8");
+	     
+	        // è·å–å½“å‰çš„æ—¶é—´
+	        Calendar calendar = new GregorianCalendar();
+	        String am_pm;
+	        int hour = calendar.get(Calendar.HOUR);
+	        int minute = calendar.get(Calendar.MINUTE);
+	        int second = calendar.get(Calendar.SECOND);
+	        if(calendar.get(Calendar.AM_PM) == 0)
+	            am_pm = "AM";
+	        else
+	            am_pm = "PM";
+	     
+	        String CT = hour+":"+ minute +":"+ second +" "+ am_pm;
+	        
+	        PrintWriter out = response.getWriter();
+	        String title = "ä½¿ç”¨ Servlet è‡ªåŠ¨åˆ·æ–°é¡µé¢";
+	        String docType = "<!DOCTYPE html> \n";
+	        out.println(docType +
+	            "<html>\n" +
+	            "<head><title>" + title + "</title></head>\n"+
+	            "<body bgcolor=\"#f0f0f0\">\n" +
+	            "<h1 align=\"center\">" + title + "</h1>\n" +
+	            "<p>å½“å‰æ—¶é—´æ˜¯ï¼š" + CT + "</p>\n");
+	    }
 
 }
