@@ -104,7 +104,11 @@ public class UploadServlet extends HttpServlet {
                     "错误信息: " + ex.getMessage());
         }
         // 跳转到 message.html
+<<<<<<< HEAD
         request.getServletContext().getRequestDispatcher("servlet/message.html").forward(
+=======
+        request.getServletContext().getRequestDispatcher("/message.html").forward(
+>>>>>>> branch 'master' of https://github.com/fanqilong99/pro.git
                 request, response);
     }
 }
